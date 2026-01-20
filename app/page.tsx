@@ -6,14 +6,16 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
 
-      {/* HERO BACKGROUND (SETENGAH ATAS) */}
-      <div className="relative h-[50vh] w-full">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/anime-bg.jpg')" }}
-        />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
-
+      {/* HERO BACKGROUND */}
+<div className="relative max-w-4xl mx-auto h-[40vh] rounded-3xl overflow-hidden">
+  <div
+    className="absolute inset-0 bg-no-repeat bg-center"
+    style={{
+      backgroundImage: "url('/anime-bg.jpg')",
+      backgroundSize: "contain",
+    }}
+  />
+  <div className="absolute inset-0 bg-black/40" />
         {/* HERO CONTENT */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
           <motion.img
