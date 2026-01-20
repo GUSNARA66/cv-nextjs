@@ -13,10 +13,12 @@ export default function Home() {
           className="absolute inset-0 bg-center bg-cover"
           style={{ backgroundImage: "url('/anime-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/70" />
+
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/90" />
 
         {/* Hero content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 -translate-y-6">
           <motion.img
             src="/profile.jpg"
             alt="Profile"
@@ -27,7 +29,7 @@ export default function Home() {
           />
 
           <motion.h1
-            className="text-3xl md:text-4xl font-bold mt-4"
+            className="text-3xl md:text-4xl font-bold mt-4 text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -35,8 +37,11 @@ export default function Home() {
             Igusti Ngurah Prayatna Rasendriya Kadwastana
           </motion.h1>
 
+          {/* underline */}
+          <div className="h-[2px] w-24 bg-white/60 mt-3 rounded-full" />
+
           <motion.p
-            className="text-gray-300 mt-2"
+            className="text-gray-300 mt-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -53,17 +58,16 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-
         {/* ABOUT */}
         <section className="mb-10">
           <h2 className="text-xl font-semibold border-b border-gray-700 pb-2 mb-4">
             About Me
           </h2>
           <p className="text-gray-300 leading-relaxed">
-            I am a junior web developer who is passionate about building clean,
+            I am a motivated junior web developer who enjoys building clean,
             modern, and responsive web interfaces. I am currently learning
-            modern technologies such as HTML, CSS, JavaScript, Tailwind CSS,
-            and Next.js while continuously improving my skills through projects.
+            HTML, CSS, JavaScript, Tailwind CSS, and Next.js while continuously
+            improving my skills through real projects.
           </p>
         </section>
 
