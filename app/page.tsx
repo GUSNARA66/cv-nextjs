@@ -4,76 +4,75 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-900">
+    <main className="min-h-screen bg-black text-white">
 
-      {/* HERO BACKGROUND */}
-      <div className="relative max-w-4xl mx-auto h-[40vh] rounded-3xl overflow-hidden mt-10">
+      {/* HERO */}
+      <div className="relative max-w-5xl mx-auto h-[45vh] rounded-b-3xl overflow-hidden">
+        {/* Background image */}
         <div
-          className="absolute inset-0 bg-no-repeat bg-right"
-          style={{
-            backgroundImage: "url('/anime-bg.jpg')",
-            backgroundSize: "70%",
-          }}
+          className="absolute inset-0 bg-center bg-cover"
+          style={{ backgroundImage: "url('/anime-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/70" />
 
-        {/* HERO CONTENT */}
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
+        {/* Hero content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <motion.img
             src="/profile.jpg"
             alt="Profile"
+            className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-xl"
+            transition={{ duration: 0.5 }}
           />
 
           <motion.h1
-            initial={{ opacity: 0, y: 12 }}
+            className="text-3xl md:text-4xl font-bold mt-4"
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-3xl font-bold mt-4 text-center"
           >
             Igusti Ngurah Prayatna Rasendriya Kadwastana
           </motion.h1>
 
           <motion.p
+            className="text-gray-300 mt-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-neutral-300 mt-2"
           >
             Junior Web Developer • Student
           </motion.p>
         </div>
       </div>
 
-      {/* CV CONTENT */}
+      {/* CV CARD */}
       <motion.section
+        className="max-w-5xl mx-auto bg-neutral-900 rounded-3xl shadow-2xl p-10 -mt-28 relative z-20"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 -mt-24 relative z-20"
+        transition={{ duration: 0.6 }}
       >
 
         {/* ABOUT */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-black mb-3">
+          <h2 className="text-xl font-semibold border-b border-gray-700 pb-2 mb-4">
             About Me
           </h2>
-          <p className="text-neutral-700 leading-relaxed">
-            I am a motivated junior web developer who is currently learning
-            modern web technologies such as HTML, CSS, JavaScript, Tailwind CSS,
-            and Next.js. I enjoy building clean, responsive, and user-friendly
-            interfaces while continuously improving my skills.
+          <p className="text-gray-300 leading-relaxed">
+            I am a junior web developer who is passionate about building clean,
+            modern, and responsive web interfaces. I am currently learning
+            modern technologies such as HTML, CSS, JavaScript, Tailwind CSS,
+            and Next.js while continuously improving my skills through projects.
           </p>
         </section>
 
         {/* SKILLS */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-black mb-4">
+          <h2 className="text-xl font-semibold border-b border-gray-700 pb-2 mb-4">
             Skills
           </h2>
+
           <div className="flex flex-wrap gap-3">
             {[
               "HTML",
@@ -85,11 +84,11 @@ export default function Home() {
             ].map((skill, i) => (
               <motion.span
                 key={skill}
+                className="px-4 py-2 bg-white text-black rounded-full text-sm font-medium"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="px-4 py-2 bg-neutral-200 text-neutral-800 rounded-full text-sm font-medium"
               >
                 {skill}
               </motion.span>
@@ -99,11 +98,11 @@ export default function Home() {
 
         {/* EDUCATION */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-black mb-3">
+          <h2 className="text-xl font-semibold border-b border-gray-700 pb-2 mb-4">
             Education
           </h2>
-          <p className="text-neutral-700">
-            <strong>SMK TI Mengwitani</strong><br />
+          <p className="text-gray-300">
+            <strong className="text-white">SMK TI Mengwitani</strong><br />
             Major: TJKT<br />
             2026 – 2027
           </p>
@@ -113,13 +112,12 @@ export default function Home() {
         <div className="text-center">
           <a
             href="/blog"
-            className="inline-block bg-black text-white px-10 py-3 rounded-full
-            font-semibold shadow-lg hover:bg-neutral-800 transition"
+            className="inline-block bg-white text-black px-10 py-3 rounded-full
+            font-semibold shadow-lg hover:bg-gray-200 transition"
           >
             View My Blog →
           </a>
         </div>
-
       </motion.section>
     </main>
   );
