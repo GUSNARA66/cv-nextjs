@@ -4,18 +4,19 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-neutral-900">
 
       {/* HERO BACKGROUND */}
-<div className="relative max-w-4xl mx-auto h-[40vh] rounded-3xl overflow-hidden">
-  <div
-    className="absolute inset-0 bg-no-repeat bg-center"
-    style={{
-      backgroundImage: "url('/anime-bg.jpg')",
-      backgroundSize: "contain",
-    }}
-  />
-  <div className="absolute inset-0 bg-black/40" />
+      <div className="relative max-w-4xl mx-auto h-[40vh] rounded-3xl overflow-hidden mt-10">
+        <div
+          className="absolute inset-0 bg-no-repeat bg-right"
+          style={{
+            backgroundImage: "url('/anime-bg.jpg')",
+            backgroundSize: "70%",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+
         {/* HERO CONTENT */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
           <motion.img
@@ -23,12 +24,12 @@ export default function Home() {
             alt="Profile"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-36 h-36 rounded-full border-4 border-white object-cover shadow-lg"
+            transition={{ duration: 0.6 }}
+            className="w-32 h-32 rounded-full border-4 border-white object-cover shadow-xl"
           />
 
           <motion.h1
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="text-3xl font-bold mt-4 text-center"
@@ -40,7 +41,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-blue-100 mt-2"
+            className="text-neutral-300 mt-2"
           >
             Junior Web Developer • Student
           </motion.p>
@@ -51,15 +52,16 @@ export default function Home() {
       <motion.section
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.7 }}
         className="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-10 -mt-24 relative z-20"
       >
+
         {/* ABOUT */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-blue-600 mb-3">
+          <h2 className="text-xl font-semibold text-black mb-3">
             About Me
           </h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-neutral-700 leading-relaxed">
             I am a motivated junior web developer who is currently learning
             modern web technologies such as HTML, CSS, JavaScript, Tailwind CSS,
             and Next.js. I enjoy building clean, responsive, and user-friendly
@@ -69,33 +71,38 @@ export default function Home() {
 
         {/* SKILLS */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-blue-600 mb-4">
+          <h2 className="text-xl font-semibold text-black mb-4">
             Skills
           </h2>
           <div className="flex flex-wrap gap-3">
-            {["HTML", "CSS", "JavaScript", "Tailwind CSS", "Next.js", "Git & GitHub"].map(
-              (skill, i) => (
-                <motion.span
-                  key={skill}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
-                >
-                  {skill}
-                </motion.span>
-              )
-            )}
+            {[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "Tailwind CSS",
+              "Next.js",
+              "Git & GitHub",
+            ].map((skill, i) => (
+              <motion.span
+                key={skill}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                viewport={{ once: true }}
+                className="px-4 py-2 bg-neutral-200 text-neutral-800 rounded-full text-sm font-medium"
+              >
+                {skill}
+              </motion.span>
+            ))}
           </div>
         </section>
 
         {/* EDUCATION */}
         <section className="mb-10">
-          <h2 className="text-xl font-semibold text-blue-600 mb-3">
+          <h2 className="text-xl font-semibold text-black mb-3">
             Education
           </h2>
-          <p className="text-gray-700">
+          <p className="text-neutral-700">
             <strong>SMK TI Mengwitani</strong><br />
             Major: TJKT<br />
             2026 – 2027
@@ -106,15 +113,14 @@ export default function Home() {
         <div className="text-center">
           <a
             href="/blog"
-            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600
-            text-white px-10 py-3 rounded-full font-semibold shadow-lg
-            hover:scale-105 transition"
+            className="inline-block bg-black text-white px-10 py-3 rounded-full
+            font-semibold shadow-lg hover:bg-neutral-800 transition"
           >
             View My Blog →
           </a>
         </div>
-      </motion.section>
 
+      </motion.section>
     </main>
   );
 }
